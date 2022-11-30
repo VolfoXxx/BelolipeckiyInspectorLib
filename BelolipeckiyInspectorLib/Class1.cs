@@ -14,11 +14,18 @@ namespace InspectorLib
 
         public string SetInspector()
         {
+            string List_of_Inspectors = "";
+
+            for (int i = 0; i < Name_of_Inspectors.Length; i++)                                        //Создаётся цикл для создания списка сотрудников в массиве
+            {
+                List_of_Inspectors += Name_of_Inspectors[i];
+            }
+
             string fullname = "";
-            Console.WriteLine("Введите ФИО инспектора");
+            Console.WriteLine($"Выберите ФИО инспектора из представленных {List_of_Inspectors}") ;
             string fullnameinsp = Console.ReadLine();
 
-            for (int i = 0; i < Name_of_Inspectors.Length; i++)                                          //Объявляется цикл для перебора нужногоэлемента массива
+            for (int i = 0; i < Name_of_Inspectors.Length; i++)                                          //Объявляется цикл для перебора нужного элемента массива
             {
                 if (Name_of_Inspectors[i] == fullnameinsp)
                 {
@@ -74,11 +81,21 @@ namespace InspectorLib
             Console.WriteLine(List_of_Inspectors);
             return List_of_Inspectors;
         }
-        /*
+        
         public void AddWorker()
         {
+            Console.WriteLine("Введите имя инспектора");
+            string member = Console.ReadLine();
             Array.Resize(ref Name_of_Inspectors, Name_of_Inspectors.Length + 1);                      //Расширение массива
-            Name_of_Inspectors[Name_of_Inspectors.Length + 1] = "Гаврилов П.С.";
-        }*/
+            Name_of_Inspectors[Name_of_Inspectors.Length - 1] = member;
+
+            string List_of_Inspectors = "";
+
+            for (int i = 0; i < Name_of_Inspectors.Length; i++)                                        //Создаётся цикл для создания списка сотрудников в массиве
+            {
+                List_of_Inspectors += Name_of_Inspectors[i];
+            }
+            Console.WriteLine(List_of_Inspectors);
+        }
     }
 }

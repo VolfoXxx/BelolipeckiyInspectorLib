@@ -1,6 +1,5 @@
 C:\Users\Student\source\repos\BelolipeckiyInspectorLib\bin\Debug\BelolipeckiyInspectorLib.dll
 C:\Users\Student\source\repos\BelolipeckiyInspectorLib\bin\Debug\BelolipeckiyInspectorLib.pdb
-C:\Users\Student\source\repos\BelolipeckiyInspectorLib\obj\Debug\BelolipeckiyInspectorLib.csproj.AssemblyReference.cache
 C:\Users\Student\source\repos\BelolipeckiyInspectorLib\obj\Debug\BelolipeckiyInspectorLib.csproj.CoreCompileInputs.cache
 C:\Users\Student\source\repos\BelolipeckiyInspectorLib\obj\Debug\BelolipeckiyInspectorLib.dll
 C:\Users\Student\source\repos\BelolipeckiyInspectorLib\obj\Debug\BelolipeckiyInspectorLib.pdb

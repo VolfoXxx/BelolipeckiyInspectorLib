@@ -9,10 +9,12 @@ namespace InspectorLib
     public class FunctionInsp
     {
         string Name_of_Inspection = "Автоинспекция г. Чита";
-        string Name_of_MainInspector = "Васильев В.И.";
+        string Name_of_MainInspector;
         string[] Name_of_Inspectors = { "Иванов И.И.", "Зиронов Т.А.", "Миронов А.В.", "Васильев В.И." };
 
-        public string SetInspector()
+        public FunctionInsp() => Name_of_MainInspector = Name_of_Inspectors[Name_of_Inspectors.Length - 1];
+
+        public string SetInspector(string fullname)
         {
             string List_of_Inspectors = "";
 
@@ -21,15 +23,13 @@ namespace InspectorLib
                 List_of_Inspectors += Name_of_Inspectors[i];
             }
 
-            string fullname = "";
             Console.WriteLine($"Выберите ФИО инспектора из представленных {List_of_Inspectors}") ;
-            string fullnameinsp = Console.ReadLine();
+            fullname = Console.ReadLine();
 
             for (int i = 0; i < Name_of_Inspectors.Length; i++)                                          //Объявляется цикл для перебора нужного элемента массива
             {
-                if (Name_of_Inspectors[i] == fullnameinsp)
+                if (Name_of_Inspectors[i] == fullname)
                 {
-                    Name_of_MainInspector.Remove(0);
                     Name_of_MainInspector = Name_of_Inspectors[i];
                 }
             }
@@ -39,7 +39,6 @@ namespace InspectorLib
 
         public string GetInspector()
         {
-            Name_of_MainInspector = Name_of_Inspectors[3];                                              //Выбирается необходимый объект массива
             Console.WriteLine($"Главный инспектор - {Name_of_MainInspector}");
             return Name_of_MainInspector;
         }
@@ -50,22 +49,9 @@ namespace InspectorLib
             return Name_of_Inspection;
         }
 
-        public string GenerateNumber()
+        public string GenerateNumber(int number, string symbol, int code)
         {
-            int number;
-            string symbol = "";
-            int code;
-
-            Random rand = new Random();
-            number = rand.Next(10, 99);                                                                 //Выбираются рандомные числа от 10 до 99
-            int symbValue = rand.Next(0, 26);                                                          //Выбираются рандомные числа от 0 до 26
-            char letter = Convert.ToChar(symbValue + 65);
-
-            symbol = symbol + letter;
-
-            code = 75;
-
-            string gen_num = $"{symbol + number + "/" + code}";
+            string gen_num = $"{symbol + "" +  number + "/" + code}";
             Console.WriteLine(gen_num);
             return gen_num;
         }
